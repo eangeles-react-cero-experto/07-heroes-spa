@@ -24,7 +24,7 @@ export const HeroCard = ({
 
   return (
     <>
-      <div className="card">
+      <div className="card animate__animated animate__fadeIn">
         <div className="row no-gutters">
           <div className="col-4">
             <img src={imgUrl} className="card-img" alt={superhero} />

@@ -1,9 +1,10 @@
 import { getHeroesByPublisher } from "../../helpers/getHeroesByPublisher.js";
 import PropTypes from "prop-types";
 import { HeroCard } from "../HeroCard/HeroCard.jsx";
+import { useMemo } from "react";
 
 export const HeroList = ({ publisher }) => {
-  const heroes = getHeroesByPublisher(publisher);
+  const heroes = useMemo(() => getHeroesByPublisher(publisher), [publisher]);
 
   return (
     <div className="row row-cols-1 row-cols-md-3 g-3">

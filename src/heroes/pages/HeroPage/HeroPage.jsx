@@ -1,24 +1,29 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../../helpers/getHeroById.js";
 import { getHeroImageUrl } from "../../helpers/getHeroImageUrl.js";
+import { useMemo } from "react";
 
 export const HeroPage = () => {
   const { heroId } = useParams();
-  const hero = getHeroById(heroId);
-  const heroImageUrl = getHeroImageUrl(heroId);
+  const hero = useMemo(() => getHeroById(heroId), [heroId]);
+  const heroImageUrl = useMemo(() => getHeroImageUrl(heroId), [heroId]);
   const navigate = useNavigate();
 
   const onBtnReturnClick = () => {
     navigate(-1);
   };
 
-  if (!hero) return <Navigate to={"/"} />;
+  if (!hero) return <Navigate to={"/"}></Navigate>;
 
   return (
     <>
       <div className="row mt-5">
         <div className="col-4">
-          <img src={heroImageUrl} alt="" className="img-thumbnail" />
+          <img
+            src={heroImageUrl}
+            alt=""
+            className="img-thumbnail animate__animated animate__fadeIn"
+          />
         </div>
         <div className="col-8">
           <h3>{hero.superhero}</h3>
