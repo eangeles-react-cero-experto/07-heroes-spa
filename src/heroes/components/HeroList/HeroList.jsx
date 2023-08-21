@@ -1,4 +1,4 @@
-import { getHeroesByPublisher } from "../../helpers/getHeroesByPublisher.js";
+import { getHeroesByPublisher } from "../../helpers/index.js";
 import PropTypes from "prop-types";
 import { HeroCard } from "../HeroCard/HeroCard.jsx";
 import { useMemo } from "react";

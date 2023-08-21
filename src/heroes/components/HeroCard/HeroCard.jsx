@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { getHeroImageUrl } from "../../helpers/getHeroImageUrl.js";
+import { getHeroImageUrl } from "../../helpers/index.js";
 
 const CharactersFilter = ({ alter_ego, characters }) => {
   if (alter_ego === characters) return <></>;
@@ -24,7 +24,7 @@ export const HeroCard = ({
 
   return (
     <>
-      <div className="card animate__animated animate__fadeIn">
+      <div className="card animate__animated animate__fadeIn animate__faster">
         <div className="row no-gutters">
           <div className="col-4">
             <img src={imgUrl} className="card-img" alt={superhero} />

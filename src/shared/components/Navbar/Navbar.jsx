@@ -21,7 +21,6 @@ export const Navbar = () => {
               <Navitem path={"/marvel"} label={"Marvel"} />
               <Navitem path={"/dc"} label={"DC"} />
               <Navitem path={"/search"} label={"Search"} />
-              <Navitem path={"hero"} label={"Hero"} />
             </div>
             <div className="d-flex pl-5">
               <span className="nav-item nav-link text-info">Edward</span>

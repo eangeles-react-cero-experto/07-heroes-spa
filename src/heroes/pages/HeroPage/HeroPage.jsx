@@ -1,6 +1,5 @@
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { getHeroById } from "../../helpers/getHeroById.js";
-import { getHeroImageUrl } from "../../helpers/getHeroImageUrl.js";
+import { getHeroById, getHeroImageUrl } from "../../helpers/index.js";
 import { useMemo } from "react";
 
 export const HeroPage = () => {
@@ -22,7 +21,7 @@ export const HeroPage = () => {
           <img
             src={heroImageUrl}
             alt=""
-            className="img-thumbnail animate__animated animate__fadeIn"
+            className="img-thumbnail animate__animated animate__fadeIn animate__faster"
           />
         </div>
         <div className="col-8">
