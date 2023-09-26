@@ -1,11 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Navitem } from "../Navitem/Navitem.jsx";
+import { useContext } from "react";
+import { AuthContext } from "../../../auth/index.js";
 
 export const Navbar = () => {
+  const { authState, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const onLogout = () => {
-    console.log("onLogout");
+    logout();
     navigate("/login", { replace: true });
   };
 
@@ -23,7 +26,9 @@ export const Navbar = () => {
               <Navitem path={"/search"} label={"Search"} />
             </div>
             <div className="d-flex pl-5">
-              <span className="nav-item nav-link text-info">Edward</span>
+              <span className="nav-item nav-link text-info">
+                {authState.username}
+              </span>
               <button
                 onClick={() => onLogout()}
                 className="btn nav-link nsv-item ml-2"

@@ -4,7 +4,7 @@ import { DcPage, MarvelPage } from "../pages/index.js";
 import { SearchPage } from "../pages/SearchPage/SearchPage.jsx";
 import { HeroPage } from "../pages/HeroPage/HeroPage.jsx";
 
-export const HeroesRouters = () => {
+export const HeroesLayout = () => {
   return (
     <>
       <Navbar />
